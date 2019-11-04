@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ventura.chess</groupId>
+  <artifactId>chess-base</artifactId>
+  <version>0.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <inceptionYear>2019</inceptionYear>
+
+  <scm>
+	<connection>scm:git:https://github.com/ginere/ginere-base2</connection>
+	<developerConnection>scm:git:https://github.com/ginere/ginere-base2</developerConnection>
+	
+	<url>https://github.com/ginere/ginere-base2</url>
+	<tag>HEAD</tag>
+  </scm>
+  
+  
+  <build>
+	<defaultGoal>install</defaultGoal>
+	<plugins>
+	  <plugin>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>3.6.1</version>
+		<configuration>
+		  <source>1.8</source>
+		  <target>1.8</target>
+		  <encoding>UTF-8</encoding>
+		</configuration>
+	  </plugin>
+	  
+	</plugins>
+  </build>
+
+  <dependencies>
+	<!-- JUnit -->	  
+	<dependency>
+	  <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <version>${junit.version}</version>
+	  <scope>test</scope>
+	</dependency>
+
+	<dependency>
+	  <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-lang3</artifactId>
+	  <version>3.9</version>
+	</dependency>
+
+	<dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.4</version>
+	</dependency>
+	
+	
+	<!-- Logback (Logging). Implements SLF4J -->
+	<dependency>
+	  <groupId>ch.qos.logback</groupId>
+	  <artifactId>logback-classic</artifactId>
+	  <version>1.2.1</version>
+	</dependency>
+	
+	<!--
+	<dependency>
+	  <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-lang3</artifactId>
+	  <version>${commons-lang.version}</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>commons-io</groupId>
+	  <artifactId>commons-io</artifactId>
+	  <version>${commons-io.version}</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>commons-codec</groupId>
+	  <artifactId>commons-codec</artifactId>
+	  <version>${commons-codec.version}</version>
+	  </dependency>
+	   -->
+
+	<!--  commons-configuration2
+	<dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.9.3</version>
+	</dependency>
+
+	
+	<dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-configuration2</artifactId>
+      <version>2.2</version>
+	</dependency>
+	 -->
+
+  </dependencies>
+
+  <properties>
+	<maven.test.skip>true</maven.test.skip>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	
+	<junit.version>4.12</junit.version>
+	
+	<commons-lang.version>3.5</commons-lang.version>
+	<commons-io.version>2.5</commons-io.version>
+	<commons-codec.version>1.10</commons-codec.version>
+
+  </properties>
+</project>
