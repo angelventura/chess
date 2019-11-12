@@ -15,6 +15,7 @@ public class Piece {
 	public String toString(){
 		return name;		
 	}
+
 	
 ////	K (king), Q (queen), R (rook), B (bishop), and N (knight). The pawn is given an empty abbreviation in SAN movetext, but in other contexts the abbreviation P i
 //	public static addPiece(String abbreviation){

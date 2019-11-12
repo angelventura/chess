@@ -17,4 +17,28 @@ public class GamePiece extends Piece {
 		return color.toString()+' '+name;		
 	}
 
+
+	public static String getAbbrevFromSAN(char pieceSan,String defaultValue) {
+		switch (pieceSan) {
+		case King.SAN:
+			return King.ABBREVIATION;
+//			break;
+		case Queen.SAN:
+			return Queen.ABBREVIATION;
+//			break;
+		case Bishop.SAN:
+			return Bishop.ABBREVIATION;
+//			break;
+		case Knight.SAN:
+			return Knight.ABBREVIATION;
+//			break;
+		case Rook.SAN:
+			return Rook.ABBREVIATION;
+//			break;
+		default:
+			return defaultValue;
+//			break;
+		}
+		
+	}
 }

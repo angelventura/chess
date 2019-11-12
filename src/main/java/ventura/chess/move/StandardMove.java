@@ -12,8 +12,8 @@ public class StandardMove extends Move {
 	public final Position i;
 	public final Position f;
 	
-	StandardMove(Color color,Piece piece,Position i,Position f){
-		super(color);
+	StandardMove(Color color,Piece piece,Position i,Position f, boolean check, boolean checkMate){
+		super(color,check,checkMate);
 		
 		this.i=i;
 		this.f=f;

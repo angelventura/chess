@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ventura.chess.board.ApplicationException;
+import ventura.chess.move.EndGameMove;
 
 public class PGNParser {
 	public static final Logger Log = LoggerFactory.getLogger(PGNParser.class);
@@ -52,6 +53,9 @@ public class PGNParser {
 									readMoves(currentGame,movesLines.toString());
 									movesLines.setLength(0);
 									ret.add(currentGame);
+									
+									Log.info(currentGame.toString());				
+
 									currentGame=new PlayedGame();
 									readingHeader=true;
 								}
@@ -173,7 +177,10 @@ public class PGNParser {
 		// Now create matcher object.
 		Matcher m = MOVE_PATTERN.matcher(line);
 
+		int lastPosition=0;
+
 		while (m.find()) {
+			lastPosition=m.end();
 
 
 			try {
@@ -200,6 +207,25 @@ public class PGNParser {
 			// Log.info("Comment: " + m.group(5));// <= Comment
 	    }
 		
+//		int index=m.end();
+		
+		if (lastPosition<line.length()) {
+			String sanEndMove=line.substring(lastPosition, line.length());
+			
+			// http://tutorials.jenkov.com/java-regex/matcher.html#find-start-end-methods
+			// ESTE ES EL FINAL 1-0 0-1 1/2-1/2 PONERLO
+			// Log.info(endS);
+			
+			EndGameMove endMove = EndGameMove.getFromSAN(sanEndMove, null);
+			ret.setEnd(endMove);
+			
+		}
+//		read the end 1-0 0-1 etc ..line.
+//		Log.info("End:"+m.hitEnd());
+//		m.
+//		
+//		String lst=m.group();
+//		Log.info(lst);
 		
 	}
 	

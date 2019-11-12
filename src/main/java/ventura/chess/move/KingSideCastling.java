@@ -1,7 +1,12 @@
 package ventura.chess.move;
 
-public class KingSideCastling extends Move {
+import ventura.chess.player.Color;
 
+public class KingSideCastling extends Move {
 	public static final String SAN="O-O";
+	
+	public KingSideCastling(Color color, boolean check, boolean checkMate){
+		super(color,check,checkMate);
+	}
 	
 }

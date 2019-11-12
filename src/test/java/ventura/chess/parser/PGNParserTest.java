@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import junit.framework.TestCase;
 
 public class PGNParserTest extends TestCase{
+	
 	public static final Logger Log = LoggerFactory.getLogger(PGNParserTest.class);
 
 //	@Test
@@ -44,6 +45,7 @@ public class PGNParserTest extends TestCase{
 			throw e;
 		}
 	}
+	
 	
 
 //	@Test
@@ -118,5 +120,48 @@ public class PGNParserTest extends TestCase{
 //			throw e;
 //		}
 //	}
+
+	
+//	@Test
+//	public void testSANMove() throws Exception {
+//		try {
+//			String moves[]={"e4","Nf3","Nxe4","fxe4","Qg8+","Rg1+","Qff3#"};
+//
+//			
+//			String PROPERTY_PATTERN = "^([KQBNR])?([abcdefgh])?([12345678])?(x)?([abcdefgh][12345678])(\\+)?(#)?$";
+//		    Pattern r = Pattern.compile(PROPERTY_PATTERN);
+//
+//		    for (String move:moves){
+//		      // Now create matcher object.
+//		      Matcher m = r.matcher(move);
+//		  
+//		      if (m.find()){
+//		          // Log.info("IGNORE: " + m.group(0) ); 
+//		          Log.info("Move:"+move+
+//						   ", Piece: " + m.group(1) +
+//						   ", File : " + m.group(2) +
+//						   ", Rank : " + m.group(3) +
+//						   ", Capture : " + m.group(4) +
+//						   ", Final Position : " + m.group(5)+
+//						   ", Check : " + m.group(6)+
+//						   ", CheckMate : " + m.group(7)
+//						   );// <= white move
+//				  
+//				  
+////		          Log.info("Black: " + m.group(3) );// <= black move
+////		          Log.info("IGNORE: " + m.group(4) );// <= IGNORE
+////		          Log.info("Comment: " + m.group(5) );// <= Comment
+//		      } else {
+//		    	  Log.error("FAILS:"+move);
+//		      }
+//		      
+//		    }			
+//		}catch (Exception e) {
+//			Log.error("",e);
+//			
+//			throw e;
+//		}
+//	}
+	
 	
 }

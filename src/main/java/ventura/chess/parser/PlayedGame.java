@@ -9,14 +9,18 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ventura.chess.board.ApplicationException;
 import ventura.chess.board.Board;
 import ventura.chess.game.Game;
+import ventura.chess.move.EndGameMove;
 
 public class PlayedGame {
 	public static final Logger Log = LoggerFactory.getLogger(PGNParser.class);
 
 	public final Map<String, String> properties=new ConcurrentHashMap<>();
 	public final List<PlayedMove> moves=new ArrayList<>();
+
+	private EndGameMove endendOfGame=null;
 	
 	PlayedGame(){
 		
@@ -30,8 +34,8 @@ public class PlayedGame {
 		}
 	}
 
-	public void addMove(int index, String whiteMove, String blackMove, String comment) {
-		PlayedMove move=new PlayedMove(index,
+	public void addMove(int index, String whiteMove, String blackMove, String comment) throws ApplicationException {
+		PlayedMove move=PlayedMove.getPlayedMove(index,
 				StringUtils.trim(whiteMove),
 				StringUtils.trim(blackMove),
 				StringUtils.trim(comment));
@@ -59,6 +63,10 @@ public class PlayedGame {
 			buff.append(m.toString()).append("\n");
 		});
 		
+		if (this.endendOfGame != null){
+			buff.append(this.endendOfGame).append("\n");
+		}
+		
 		return buff.toString();
 		
 	}
@@ -69,11 +77,18 @@ public class PlayedGame {
 		Board board = Board.setupInitialBoard();
 		
 		moves.forEach(m ->{
-			m.applyMove(board);	
-			
+			m.applyMove(board);				
 		});
 		
+		
+		ret.setEndOfGame(this.endendOfGame);
+		
 		return ret;
+	}
+
+	public void setEnd(EndGameMove endMove) {
+		this.endendOfGame=endMove;
+		
 	}
 	
 }
