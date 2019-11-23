@@ -10,10 +10,10 @@
   <inceptionYear>2019</inceptionYear>
 
   <scm>
-	<connection>scm:git:https://github.com/ginere/ginere-base2</connection>
-	<developerConnection>scm:git:https://github.com/ginere/ginere-base2</developerConnection>
+	<connection>scm:git:https://github.com/angelventura/chess.git</connection>
+	<developerConnection>scm:git:https://github.com/angelventura/chess.git</developerConnection>
 	
-	<url>https://github.com/ginere/ginere-base2</url>
+	<url>https://github.com/angelventura/chess.git</url>
 	<tag>HEAD</tag>
   </scm>
   
